@@ -46,5 +46,14 @@ public class ClienteModel {
 		this.quantidadeDeMalas = quantidadeDeMalas;
 	}
 	
+	public String toString() {
+		StringBuilder modelo = new StringBuilder();
+		modelo.append("Nome: "+this.getNome());
+		modelo.append("Email: "+this.getEmail());
+		modelo.append("Idade: "+this.getIdade());
+		modelo.append("Quatidade de malas: "+this.getQuantidadeDeMalas());
+		return modelo.toString();
+	}
+	
 
 }
