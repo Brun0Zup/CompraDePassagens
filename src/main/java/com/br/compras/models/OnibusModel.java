@@ -10,7 +10,7 @@ public class OnibusModel {
 	private String tempoViagem;
 	private int lugares;
 	private int lugaresDisponiveis;
-	private List<ClienteModel> listaClietes;
+	private List<ClienteModel> listaClientes;
 	
 	
 
@@ -21,14 +21,14 @@ public class OnibusModel {
 	
 
 	public OnibusModel(int id,String empresa, String destino, String tempoViagem, int lugares, int lugaresDisponiveis,
-			List<ClienteModel> listaClietes) {
+			List<ClienteModel> listaClientes) {
 		this.id = id;
 		this.empresa = empresa;
 		this.destino = destino;
 		this.tempoViagem = tempoViagem;
 		this.lugares = lugares;
 		this.lugaresDisponiveis = lugaresDisponiveis;
-		this.listaClietes = listaClietes;
+		this.listaClientes = listaClientes;
 	}
 
 	
@@ -86,12 +86,12 @@ public class OnibusModel {
 		this.lugaresDisponiveis = lugaresDisponiveis;
 	}
 
-	public List<ClienteModel> getListaClietes() {
-		return listaClietes;
+	public List<ClienteModel> getListaClientes() {
+		return listaClientes;
 	}
 
-	public void setListaClietes(List<ClienteModel> listaClietes) {
-		this.listaClietes = listaClietes;
+	public void setListaClientes(List<ClienteModel> listaClientes) {
+		this.listaClientes = listaClientes;
 	}
 	
 }
