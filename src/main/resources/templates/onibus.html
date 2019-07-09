@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jefferson Pizzas cardapio</title>
+    <title>Rodoviaria J&B</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
     
    
@@ -34,11 +34,9 @@
                 
                 <h3>Lista de clientes</h3>
                 <div class="cliente" th:each="cliente : ${onibus.listaClientes}">
-                	<p th:text="None---+${cliente.nome}"></p>
-                	<p th:text="Malas---+${cliente.quantidadeDeMalas}"></p>
-                	<p>______________________________</p>  
+                	<p th:text="None---+${cliente.nome}+| Malas---${cliente.quantidadeDeMalas}"></p>
                 </div>
-                              
+                            
                 <p>______________________________</p>            
 
         </div>

@@ -8,12 +8,5 @@ import com.br.compras.models.ClienteModel;
 public class ClienteService {
 
 	
-public ClienteModel cadastrarCliente(ClienteModel cliente) {
-	 
-	return cliente;
-	
-}
-
-
 	
 }

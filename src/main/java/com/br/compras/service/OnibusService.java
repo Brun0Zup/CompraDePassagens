@@ -12,50 +12,42 @@ import com.br.compras.models.OnibusModel;
 @Service
 public class OnibusService {
 
-	private List<OnibusModel> listaOnibus = new ArrayList<OnibusModel>();
+	List<ClienteModel> lista1 = new ArrayList<ClienteModel>();
+	List<ClienteModel> lista2 = new ArrayList<ClienteModel>();
 
-	public void criarOnibus() {
-		List<ClienteModel> lista1 = new ArrayList<ClienteModel>();
-		List<ClienteModel> lista2 = new ArrayList<ClienteModel>();
-		
-		listaOnibus.add(new OnibusModel(1, "BrunoBus", "sei la", "Uma hora e meia", 20, 20, lista1));
-		listaOnibus.add(new OnibusModel(2, "BenBus", "Onde eu quizer", "Uma hora ", 20, 20, lista2));
-
-	}
+	private List<OnibusModel> listaOnibus = new ArrayList<OnibusModel>(
+			Arrays.asList(new OnibusModel(1, "BrunoBus", "sei la", "Uma hora e meia", 2, 2, lista1),
+					new OnibusModel(2, "BenBus", "Onde eu quiser", "Uma hora ", 20, 20, lista2)));
 
 	public List<OnibusModel> exibirTodos() {
 		return listaOnibus;
 
 	}
 
-
-	public void cadastrarCliente(int id, ClienteModel cliente) {
+	public String cadastrarCliente(int id, ClienteModel cliente) {
 
 		List<ClienteModel> lista = new ArrayList<ClienteModel>();
-
-		OnibusModel onibus = new OnibusModel();
 
 		for (OnibusModel onibusModel : listaOnibus) {
 
 			if (onibusModel.getId() == id) {
-				onibus = onibusModel;
-				
-				onibus.setLugaresDisponiveis(onibus.getLugaresDisponiveis()-1);
-				lista = onibus.getListaClientes();
-				lista.add(cliente);
-				onibus.setListaClientes(lista);
-				
+				if (onibusModel.getLugaresDisponiveis() < 1) {
+					return "redirect:/esgotado";
+				} else if (cliente.getIdade() < 18) {
+					return "redirect:/barrado";
+				} else {
+					onibusModel.setLugaresDisponiveis(onibusModel.getLugaresDisponiveis() - 1);
+					lista = onibusModel.getListaClientes();
+					lista.add(cliente);
+					onibusModel.setListaClientes(lista);
+
+					return "redirect:/comprar/{id}";
+
+				}
 
 			}
 		}
-		
-//		listaOnibus.remove(onibus);
-//
-//		lista = onibus.getListaClientes();
-//		lista.add(cliente);
-//		onibus.setListaClientes(lista);
-//		
-//		listaOnibus.add(onibus);
+		return "redirect:/comprar/{id}";
 
 	}
 
