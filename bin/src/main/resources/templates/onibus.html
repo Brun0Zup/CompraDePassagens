@@ -15,7 +15,8 @@
             <ul class="lista">
                 <li> <a href="/">Pagina inicial</a> </li>
                 <li><a href=" "> | </a></li>
-                               
+                <li> <a href="/criarpizza">Criar Pizza</a> </li>
+                
             </ul>
         </nav>
     </div>
@@ -24,21 +25,14 @@
     <h1>Onibus</h1>
     <p>______________________________</p>
     	
-        <div th:each="onibus : ${listaOnibus}">
+        <div class="onibus" th:each="onibus : ${listaOnibus}">
 
                 <a th:href="@{/comprar/{id}(id=${onibus.id}) }"><p th:text="${onibus.destino}"></p></a>          
                 <p th:text="Empresa---+${onibus.empresa}"></p>
                 <p th:text="Tempo_de_viagem---+${onibus.tempoViagem}"></p>
                 <p th:text="Total_de_lugares---+${onibus.lugares}"></p>  
                 <p th:text="Lugares_disponiveis---+${onibus.lugaresDisponiveis}"></p>
-                
-                <h3>Lista de clientes</h3>
-                <div class="cliente" th:each="cliente : ${onibus.listaClientes}">
-                	<p th:text="None---+${cliente.nome}"></p>
-                	<p th:text="Malas---+${cliente.quantidadeDeMalas}"></p>
-                	<p>______________________________</p>  
-                </div>
-                              
+                <p th:text="Lista_de_clientes---+${onibus.listaClientes}"></p>                
                 <p>______________________________</p>            
 
         </div>
