@@ -20,6 +20,7 @@ public class OnibusController {
 	@GetMapping("/")
 	public ModelAndView listarOnibus() {
 		ModelAndView modelAndView = new ModelAndView("onibus.html");
+		onibusService.criarOnibus();
 		modelAndView.addObject("listaOnibus", onibusService.exibirTodos());
 		return modelAndView;
 
@@ -31,22 +32,15 @@ public class OnibusController {
 		return modelAndView;
 	}
 
-//	@PostMapping("/comprar/{id}")
-//	public void cadastrarCliente(@PathVariable int id, ClienteModel cliente) {
-//
-//		ClienteService clienteCadastrado = new ClienteService();
-//		clienteCadastrado.cadastrarCliente(cliente);
-//		onibusService.cadastrarCliente(id, cliente);
-//
-//	}
-	@PostMapping("/comprar/{id}")	
-	public void cliente( ClienteModel cliente, @PathVariable int id) {
-		
+	@PostMapping("/comprar/{id}")
+	public String cliente(ClienteModel cliente, @PathVariable int id) {
+
 		ClienteService clienteCadastrado = new ClienteService();
 		clienteCadastrado.cadastrarCliente(cliente);
 		onibusService.cadastrarCliente(id, cliente);
-		
-		
+
+		return "redirect:/comprar/{id}";
+
 	}
 
 }
