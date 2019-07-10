@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jefferson Pizzas cardapio</title>
+    <title>Rodoviaria J&B</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-    
-   
+
+
 </head>
+
 <body>
-	<div class="menu">
+    <div class="menu">
         <nav>
             <ul class="lista">
                 <li> <a href="/">Pagina inicial</a> </li>
-                <li><a href=" "> | </a></li>
-                               
+                
             </ul>
         </nav>
     </div>
-    <form method="POST">			
-			Nome: <input type="text" name="nome"> <br>
-			Email <input type="text" name="email"><br>
-			Idade: <input type="number" name="idade"><br>
-			Malas: <input type="number" name="quantidadeDeMalas"><br>
-			<button type="submit">Comprar</button>
-		</form>
+    <form method="POST">
+        <fieldset>
+            <legend>
+                <h2>Entrada de Cliente</h2>
+            </legend>
+            Nome: <input type="text" name="nome"> <br><br>
+            Email <input type="text" name="email"><br><br>
+            Idade: <input type="number" name="idade"><br><br>
+            Malas: <input type="number" name="quantidadeDeMalas"><br><br>
+            <button class="comprar" type="submit">Comprar</button>
+        </fieldset>
+    </form>
     <div>
-   
-   
+
+
     </div>
-    
+
 </body>
+
 </html>

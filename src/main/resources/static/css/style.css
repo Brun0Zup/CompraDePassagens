@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    background-color: rgba(52, 107, 228, 0.30);
+    justify-content: space-between;
+}
+
+.lista {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lista li {
+    padding-left: 10px;
+    list-style: none;
+}
+
+h1{
+    text-align: center;
+    color: red;
+}
+img {
+	margin-left:400px;
+}
+a{
+    text-decoration: none;
+    color: white;    
+}
+a:hover{
+    color: yellow;
+}
+.caminho{
+    color: black;
+    font-size: x-large;
+}
+.caminho:hover{
+    color: red;
+}
+.comprar{
+    background-color: rgba(0, 0, 255, 0.30);
+    border: solid transparent 2px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.comprar:hover{
+    background-color:rgba(255, 238, 0, 0.50);
+    
+}
